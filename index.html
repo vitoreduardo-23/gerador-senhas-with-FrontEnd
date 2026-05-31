@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Forte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Gerador de Senhas Forte</h1>
+            <p class="subtitle">Gere uma senha segura e aleatória</p>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="passwordLength">Tamanho da Senha:</label>
+                    <div class="length-input-wrapper">
+                        <input 
+                            type="range" 
+                            id="passwordLength" 
+                            min="8" 
+                            max="32" 
+                            value="12"
+                            class="length-slider"
+                        >
+                        <input 
+                            type="number" 
+                            id="passwordLengthNumber" 
+                            min="8" 
+                            max="32" 
+                            value="12"
+                            class="length-number"
+                        >
+                    </div>
+                    <p class="error-message" id="errorMessage"></p>
+                </div>
+
+                <!-- Character Options -->
+                <div class="options-group">
+                    <label class="option-label">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span>Letras Maiúsculas (A-Z)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span>Letras Minúsculas (a-z)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="numbers" checked>
+                        <span>Números (0-9)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="checkbox" id="special" checked>
+                        <span>Caracteres Especiais (!@#$...)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="btn-primary">Gerar Senha</button>
+
+            <!-- Password Display -->
+            <div class="password-section" id="passwordSection" style="display: none;">
+                <div class="password-wrapper">
+                    <div class="password-display" id="passwordDisplay">Senha aqui</div>
+                    <button id="copyBtn" class="btn-copy" title="Copiar para área de transferência">
+                        <span class="copy-icon">📋</span>
+                    </button>
+                </div>
+                <p class="success-message" id="successMessage" style="display: none;">Copiado para área de transferência!</p>
+            </div>
+
+            <!-- Password Strength Indicator -->
+            <div class="strength-section" id="strengthSection" style="display: none;">
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+                <p class="strength-text" id="strengthText">Força da senha:</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
